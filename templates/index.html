@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python Code Converter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <textarea id="inputCode" placeholder="Enter your Python code here"></textarea>
+    <select id="pythonVersion">
+        <option value="3.9">Python 3.9</option>
+        <option value="3.8">Python 3.8</option>
+        <option value="3.7">Python 3.7</option>
+    </select>
+    <button onclick="convertCode()">Convert Code</button>
+    <textarea id="outputCode" placeholder="Converted code will appear here" readonly></textarea>
+
+    <script>
+        function convertCode() {
+            var code = $('#inputCode').val();
+            var version = $('#pythonVersion').val();
+            $.post('http://localhost:5000/convert', {code: code, version: version}, function(data) {
+                $('#outputCode').val(data.converted_code);
+            });
+        }
+    </script>
+</body>
+</html>
