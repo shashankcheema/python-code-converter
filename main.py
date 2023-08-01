@@ -11,7 +11,7 @@ def home():
 
 @app.route('/convert', methods=['POST'])
 def convert_code():
-    data = request.get_json()
+    data = request.get_json(force=True)
     converter = PythonCodeConverter(data['code'], data['version'])
     converted_code = converter.convert_code()
     return jsonify({'converted_code': converted_code})
