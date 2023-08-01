@@ -2,15 +2,26 @@
 <html>
 <head>
     <title>Python Code Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="container">
         <h1 class="my-4">Python Code Converter</h1>
-        <div class="form-group">
-            <label for="inputCode">Input Code:</label>
-            <textarea id="inputCode" class="form-control" rows="10" placeholder="Enter your Python code here"></textarea>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="inputCode">Input Code:</label>
+                    <textarea id="inputCode" class="form-control" rows="10" placeholder="Enter your Python code here"></textarea>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="outputCode">Converted Code:</label>
+                    <textarea id="outputCode" class="form-control" rows="10" placeholder="Converted code will appear here" readonly></textarea>
+                </div>
+            </div>
         </div>
         <div class="form-group">
             <label for="pythonVersion">Target Python Version:</label>
@@ -21,10 +32,6 @@
             </select>
         </div>
         <button onclick="convertCode()" class="btn btn-primary mb-3">Convert Code</button>
-        <div class="form-group">
-            <label for="outputCode">Converted Code:</label>
-            <textarea id="outputCode" class="form-control" rows="10" placeholder="Converted code will appear here" readonly></textarea>
-        </div>
     </div>
 
     <script>
