@@ -2,17 +2,30 @@
 <html>
 <head>
     <title>Python Code Converter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <textarea id="inputCode" placeholder="Enter your Python code here"></textarea>
-    <select id="pythonVersion">
-        <option value="3.9">Python 3.9</option>
-        <option value="3.8">Python 3.8</option>
-        <option value="3.7">Python 3.7</option>
-    </select>
-    <button onclick="convertCode()">Convert Code</button>
-    <textarea id="outputCode" placeholder="Converted code will appear here" readonly></textarea>
+    <div class="container">
+        <h1 class="my-4">Python Code Converter</h1>
+        <div class="form-group">
+            <label for="inputCode">Input Code:</label>
+            <textarea id="inputCode" class="form-control" rows="10" placeholder="Enter your Python code here"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="pythonVersion">Target Python Version:</label>
+            <select id="pythonVersion" class="form-control">
+                <option value="3.9">Python 3.9</option>
+                <option value="3.8">Python 3.8</option>
+                <option value="3.7">Python 3.7</option>
+            </select>
+        </div>
+        <button onclick="convertCode()" class="btn btn-primary mb-3">Convert Code</button>
+        <div class="form-group">
+            <label for="outputCode">Converted Code:</label>
+            <textarea id="outputCode" class="form-control" rows="10" placeholder="Converted code will appear here" readonly></textarea>
+        </div>
+    </div>
 
     <script>
         function convertCode() {
