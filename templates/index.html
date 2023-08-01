@@ -40,10 +40,17 @@
         function convertCode() {
             var code = $('#inputCode').val();
             var version = $('#pythonVersion').val();
-            $.post('http://localhost:5000/convert', {code: code, version: version}, function(data) {
-                $('#outputCode').val(data.converted_code);
-            });
+            $.ajax({
+                url: 'http://localhost:5000/convert',
+                method: 'POST',
+                contentType: 'application/json',  // Set the content-type header to 'application/json'
+                data: JSON.stringify({code: code, version: version}),  // Convert the data to a JSON string
+                success: function(data) {
+                    $('#outputCode').val(data.converted_code);
         }
+    });
+}
+
     </script>
 </body>
 </html>
