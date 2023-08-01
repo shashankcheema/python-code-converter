@@ -3,7 +3,7 @@ from flask_cors import CORS
 from python_code_converter import PythonCodeConverter
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "PUT", "DELETE", "PATCH"], "allow_headers": "*"}})
 
 @app.route('/')
 def home():
@@ -11,7 +11,7 @@ def home():
 
 @app.route('/convert', methods=['POST'])
 def convert_code():
-    data = request.get_json(force=True)
+    data = request.get_json(force=True)  # force=True ensures parsing even if the content-type header is not set.
     converter = PythonCodeConverter(data['code'], data['version'])
     converted_code = converter.convert_code()
     return jsonify({'converted_code': converted_code})
