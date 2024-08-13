@@ -1,0 +1,25 @@
+Upgrading from Jira 8.20.x to Jira 9.12 or 9.17 involves several significant changes and potential technical challenges. Here's what you need to consider:
+
+Major Changes:
+End of Support for Server Licenses: Jira 9.12 is the last version that supports server licenses, with support ending on February 15, 2024. Future updates will only be available for Data Center versions​ (Atlassian Documentation)​ (Atlassian Documentation).
+
+Reindexing: Upgrading from Jira 8.x to 9.x triggers a full reindex, which can cause significant downtime. It's crucial to plan this upgrade during a low-activity period to minimize disruptions​ (Atlassian Documentation).
+
+Database Changes: The upgrade introduces new database tables and versions, requiring manual inserts into certain tables to avoid issues during the upgrade. This process can be time-consuming depending on the size of your database​ (Atlassian Documentation).
+
+Compatibility Issues:
+
+Apache Tomcat: The upgrade to Tomcat 9.0.75 in Jira 9.10 introduces compatibility issues with older New Relic agents (pre-8.2.0). This could affect monitoring and require updates​ (Atlassian Documentation).
+Jira Automation: The allowlist for outbound HTTP requests is now enabled by default, which may break existing automation rules that aren't on the allowlist​ (Atlassian Community).
+Security Enhancements: New security features include secret token support for DVCS webhook requests and improvements to attachment storage when using S3 object storage​ (Atlassian Documentation).
+
+Potential Technical Issues:
+Downtime During Upgrade: The reindexing process is the most significant source of downtime. It is recommended to perform a full reindex in a temporary instance to minimize the impact on production​ (Atlassian Documentation).
+
+Configuration Changes: You might need to update configuration files such as dbconfig.xml, server.xml, and web.xml to ensure compatibility with the new version​ (Atlassian Community).
+
+Integration Breaks: Some third-party integrations and custom plugins might break due to changes in API and storage methods. Testing in a staging environment before upgrading is essential to identify and mitigate these issues​ (Atlassian Documentation).
+
+Recommendations:
+Thorough Testing: Set up a test environment that mirrors your production setup as closely as possible to test the upgrade process and identify issues before they affect your live environment​ (Atlassian Documentation).
+Backup: Ensure you have a full backup of your Jira instance, including the database and application files, before starting the upgrade.
