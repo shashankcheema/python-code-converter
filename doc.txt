@@ -1,65 +1,48 @@
-Upgrading from Jira 8.20.x to Jira 9.12 or 9.17 involves several significant changes and potential technical challenges. Here's what you need to consider:
+Goal: Create/improve and execute on the abilities to build, deploy, and manage generative AI model solutions.
+Objective 1: Enable capabilities to support advancement of Generative AI
+Increased productivity over a range of business processes resulting in lower operating expenses.
 
-Major Changes:
-End of Support for Server Licenses: Jira 9.12 is the last version that supports server licenses, with support ending on February 15, 2024. Future updates will only be available for Data Center versions​ (Atlassian Documentation)​ (Atlassian Documentation).
-
-Reindexing: Upgrading from Jira 8.x to 9.x triggers a full reindex, which can cause significant downtime. It's crucial to plan this upgrade during a low-activity period to minimize disruptions​ (Atlassian Documentation).
-
-Database Changes: The upgrade introduces new database tables and versions, requiring manual inserts into certain tables to avoid issues during the upgrade. This process can be time-consuming depending on the size of your database​ (Atlassian Documentation).
-
-Compatibility Issues:
-
-Apache Tomcat: The upgrade to Tomcat 9.0.75 in Jira 9.10 introduces compatibility issues with older New Relic agents (pre-8.2.0). This could affect monitoring and require updates​ (Atlassian Documentation).
-Jira Automation: The allowlist for outbound HTTP requests is now enabled by default, which may break existing automation rules that aren't on the allowlist​ (Atlassian Community).
-Security Enhancements: New security features include secret token support for DVCS webhook requests and improvements to attachment storage when using S3 object storage​ (Atlassian Documentation).
-
-Potential Technical Issues:
-Downtime During Upgrade: The reindexing process is the most significant source of downtime. It is recommended to perform a full reindex in a temporary instance to minimize the impact on production​ (Atlassian Documentation).
-
-Configuration Changes: You might need to update configuration files such as dbconfig.xml, server.xml, and web.xml to ensure compatibility with the new version​ (Atlassian Community).
-
-Integration Breaks: Some third-party integrations and custom plugins might break due to changes in API and storage methods. Testing in a staging environment before upgrading is essential to identify and mitigate these issues​ (Atlassian Documentation).
-
-Recommendations:
-Thorough Testing: Set up a test environment that mirrors your production setup as closely as possible to test the upgrade process and identify issues before they affect your live environment​ (Atlassian Documentation).
-Backup: Ensure you have a full backup of your Jira instance, including the database and application files, before starting the upgrade.
+Goal: Elevate Architecture and Engineering competencies, while improving partnership between Product/Engineering/Agile Management and all our user communities we serve.
+Objective 1: Support and participate in Mentoring
+Objective 2: Support Innovation
+Objective 3: Support and participate in Publishing / Talks
+Objective 4: Create, baseline, track and communicate Engineering Metrics
+Outcomes:
+Improved staff morale, and workforce productivity
+Score card: DORA Metrics (Deployment Frequency, Lead Time for Changes, Mean Time To Recovery (MTTR), Change Failure Rate), Engineering Metrics (Code Quality Gate Score, Error Rate, Availability, Published Artifacts)
 
 
+Goal: Enable, Execute, and Improve the regulatory/risk/governance management of models and strategies
+Objective 1: Enhance Model Inventory Management Capabilities
+Objective 2: Enable platform Data Quality platform capabilities.
+Objective 3: Enhance organizational process documentation and standardization
+Improved risk & regulatory management thus reducing customer and business harm
 
-#########################
+Goal: Improve, simplify and execute our strategy capabilities and deployments that are fit for purpose to Fraud & Credit
+Objective 1: Improved real-time data provisioning framework
+Faster (X%) & improved strategy deployments utilizing new decisioning inputs leading to reduced losses and/or higher revenue
+Objective 2: Strategy platform Enhancements (Optimization & A/B testing)
+More effective strategy implementations leading to reduced losses and/or higher revenue
+Objective 3: GBG and Simility replacements
+Objective 4: Enable data assets from Helix into our Decisioning Platform
 
-Key Changes in Jira 9.17:
-Enhanced Automation:
+Goal: Improve observability, resilience and recoverability of our strategy/model production implementations and the platforms that support them.
+Objective 1: Provide improved model performance management capabilities
+Increased Inference effectiveness resulting in better decisions leading to reduced losses and/or higher revenue
+Objective 2: Enable capabilities to better report on and more quickly remediate issues
+Objective 3: Create improved observability and recoverability tools for our platforms and the processes (Strategies/models) that run on them
+Reduce business and customer harm, and greater workforce productivity resulting in lower operating expenses; Improved team moral
 
-Jira 9.17 continues to enhance automation capabilities with additional triggers, conditions, and actions. These improvements allow for more sophisticated workflows and automation rules.
-Supporting Links: You can find details on these updates in the Jira release notes and documentation for the 9.17 version here.
-Improved Performance:
+Goal: Improve our model platform capabilities while executing model deployments in support of Credit, Fraud, Collections and AML
+Objective 1: Enable 5-30% faster deployment capabilities with increased flexibility and robustness for Batch and Real-time models.
+Nimbler business decisions/customer treatments leading to reduced losses and/or higher revenue. 
+Improved reaction speed to resolve issues leading to decreased customer/company harm.
+Objective 2: Improve real-time/batch model deployment flexibility that allows for models to be deployed or deprecated more independently of strategies.
+Objective 3: Enable Capabilities to help Deploy and Retire models that support Fraud & Credit strategies.
+Objective 4: Enable data assets from Helix into our Decisioning Platform
 
-Performance enhancements are a core focus in each Jira update, and 9.17 includes optimizations that improve the speed and efficiency of operations, particularly for large instances.
-Supporting Links: Performance improvements and other optimizations are highlighted in the official Jira 9.17 release notes here.
-Security Updates:
 
-Jira 9.17 incorporates the latest security patches, ensuring that your instance is protected against newly discovered vulnerabilities.
-Supporting Links: Security updates and patches included in Jira 9.17 can be reviewed in the release documentation here.
-Technical Considerations:
-API and Database Changes:
-
-While Jira 9.17 is backward compatible with earlier 9.x versions, it’s essential to review any API changes that could affect custom scripts, plugins, or integrations.
-Supporting Links: Detailed information about API and database changes can be found in the Jira API documentation and upgrade notes here.
-Third-Party Plugin Compatibility:
-
-Verifying plugin compatibility is crucial to avoid issues after the upgrade. Most vendors release updates in line with Jira’s updates, but checking beforehand is a best practice.
-Supporting Links: You can check plugin compatibility by visiting the Atlassian Marketplace or referring to the plugin documentation here.
-Browser and Platform Support:
-
-Ensure your environment, including Java, database, and operating system, is compatible with Jira 9.17.
-Supporting Links: Atlassian’s compatibility matrix is available here.
-Upgrade Process:
-Smooth Transition:
-
-The transition from 9.12 to 9.17 is typically smooth and doesn’t usually require a full reindex, although it’s still recommended to follow Atlassian’s best practices during the upgrade.
-Supporting Links: The official upgrade guide from Atlassian for Jira can be accessed here.
-Backup:
-
-Backing up your Jira instance (database and application) is critical before starting the upgrade process.
-Supporting Links: Atlassian provides a comprehensive backup and restore guide here.
+Goal: Increase diverse group representation, equity, and inclusion for my business unit by leading, actioning, and supporting specific efforts that contribute to achievement of the enterprise DEI North Star goals.
+Objective 1: Participate in events that drive diversity and inclusion
+Objective 2:  Make an intentional effort to interview diverse set of properly qualified candidates
+Objective 3: Authentically be aware and celebrate multi-cultural events/ideas/norms/history
