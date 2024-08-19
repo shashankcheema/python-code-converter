@@ -1,48 +1,43 @@
-Goal: Create/improve and execute on the abilities to build, deploy, and manage generative AI model solutions.
-Objective 1: Enable capabilities to support advancement of Generative AI
-Increased productivity over a range of business processes resulting in lower operating expenses.
+What’s Going Well:
 
-Goal: Elevate Architecture and Engineering competencies, while improving partnership between Product/Engineering/Agile Management and all our user communities we serve.
-Objective 1: Support and participate in Mentoring
-Objective 2: Support Innovation
-Objective 3: Support and participate in Publishing / Talks
-Objective 4: Create, baseline, track and communicate Engineering Metrics
-Outcomes:
-Improved staff morale, and workforce productivity
-Score card: DORA Metrics (Deployment Frequency, Lead Time for Changes, Mean Time To Recovery (MTTR), Change Failure Rate), Engineering Metrics (Code Quality Gate Score, Error Rate, Availability, Published Artifacts)
+Enhanced Monitoring and Incident Response:
 
+The recent upgrades to our monitoring and alerting systems, particularly for batch models, have been a significant technical achievement. By implementing detailed monitoring at the Common Logging Service (CLS) and infrastructure levels, we’ve created a robust framework that proactively identifies potential issues before they escalate. The integration with ServiceNow for automated incident management has streamlined our response processes, ensuring that issues are quickly flagged and addressed across multiple lines of business (LOBs). These enhancements directly support our goals of maintaining high system reliability, minimizing downtime, and improving operational efficiency.
+Mentorship and Team Development:
 
-Goal: Enable, Execute, and Improve the regulatory/risk/governance management of models and strategies
-Objective 1: Enhance Model Inventory Management Capabilities
-Objective 2: Enable platform Data Quality platform capabilities.
-Objective 3: Enhance organizational process documentation and standardization
-Improved risk & regulatory management thus reducing customer and business harm
+Through mentorship, particularly with Allison from BT ServiceNow, we've facilitated both technical growth and personal development, which has strengthened the overall capability of our team. On the technical side, the innovation sprints have been particularly impactful. These sprints have allowed the team to experiment with new technologies, such as containerization and microservices architecture, encouraging creative problem-solving and cross-functional collaboration. This aligns with our goals of elevating architecture and engineering competencies and fostering a culture of continuous learning and innovation within the organization.
+Data Quality Improvements:
 
-Goal: Improve, simplify and execute our strategy capabilities and deployments that are fit for purpose to Fraud & Credit
-Objective 1: Improved real-time data provisioning framework
-Faster (X%) & improved strategy deployments utilizing new decisioning inputs leading to reduced losses and/or higher revenue
-Objective 2: Strategy platform Enhancements (Optimization & A/B testing)
-More effective strategy implementations leading to reduced losses and/or higher revenue
-Objective 3: GBG and Simility replacements
-Objective 4: Enable data assets from Helix into our Decisioning Platform
+The technical effort to onboard 80% of our Fraud and Batch Models onto Anomalo, a data quality tool, has significantly improved our data management practices. We implemented sophisticated data validation checks that run automatically, ensuring that the data feeding into our models is both accurate and reliable. This initiative has also involved setting up real-time alerts that notify us of any anomalies, allowing for immediate corrective action. These improvements are crucial for our risk management goals, as they reduce the likelihood of data-driven errors that could impact model performance and business decisions.
+Improved Observability in Batch Models:
 
-Goal: Improve observability, resilience and recoverability of our strategy/model production implementations and the platforms that support them.
-Objective 1: Provide improved model performance management capabilities
-Increased Inference effectiveness resulting in better decisions leading to reduced losses and/or higher revenue
-Objective 2: Enable capabilities to better report on and more quickly remediate issues
-Objective 3: Create improved observability and recoverability tools for our platforms and the processes (Strategies/models) that run on them
-Reduce business and customer harm, and greater workforce productivity resulting in lower operating expenses; Improved team moral
+The development and deployment of real-time observability tools have been a key technical advancement. We’ve created dashboards that provide granular insights into model performance, error rates, and processing times, using technologies like Grafana and Kibana. Enhanced logging practices, leveraging centralized logging frameworks, have allowed us to capture more detailed metrics and trace issues back to their root causes with greater precision. This improved observability not only supports our goal of ensuring system resilience but also facilitates quicker troubleshooting and recovery, ultimately reducing operational risks and enhancing system reliability.
+Opportunities for Further Enhancement:
 
-Goal: Improve our model platform capabilities while executing model deployments in support of Credit, Fraud, Collections and AML
-Objective 1: Enable 5-30% faster deployment capabilities with increased flexibility and robustness for Batch and Real-time models.
-Nimbler business decisions/customer treatments leading to reduced losses and/or higher revenue. 
-Improved reaction speed to resolve issues leading to decreased customer/company harm.
-Objective 2: Improve real-time/batch model deployment flexibility that allows for models to be deployed or deprecated more independently of strategies.
-Objective 3: Enable Capabilities to help Deploy and Retire models that support Fraud & Credit strategies.
-Objective 4: Enable data assets from Helix into our Decisioning Platform
+Continued Focus on Innovation and Strategic Initiatives:
+
+As we continue to build on our technical successes, there’s an opportunity to further leverage emerging technologies and innovative approaches. For example, expanding our use of machine learning for predictive monitoring and anomaly detection could provide even greater foresight into potential system issues. Encouraging broader participation in these technical initiatives can help sustain the momentum and ensure that we remain at the cutting edge of technological advancement, directly supporting our strategic goals.
+Strengthening Collaboration and Communication:
+
+Enhancing collaboration between our engineering, product, and agile management teams can lead to more integrated and effective technical solutions. By refining our DevOps practices and continuing to build out our CI/CD pipelines, we can improve the speed and reliability of deployments. Additionally, improving communication channels, perhaps through the adoption of tools like Slack or Microsoft Teams integrated with our monitoring systems, could further align team efforts with our overarching business and technical goals.
+Sustaining Momentum in Process Improvements:
+
+As we continue to refine our technical processes, maintaining a focus on automation and efficiency will be key. Expanding our use of Infrastructure as Code (IaC) with tools like Terraform or AWS CloudFormation can help streamline our infrastructure management, reduce manual errors, and increase deployment consistency. Sustaining these efforts will not only improve operational resilience but also align with our long-term objectives of reducing risk and enhancing system reliability.
+Overall, while we’ve made significant technical progress in areas like monitoring, mentorship, data quality, and observability, there are still opportunities to build on these achievements. By continuing to foster innovation, enhance collaboration, and optimize our technical processes, we can ensure that our efforts remain aligned with our business goals and risk management strategies.
 
 
-Goal: Increase diverse group representation, equity, and inclusion for my business unit by leading, actioning, and supporting specific efforts that contribute to achievement of the enterprise DEI North Star goals.
-Objective 1: Participate in events that drive diversity and inclusion
-Objective 2:  Make an intentional effort to interview diverse set of properly qualified candidates
-Objective 3: Authentically be aware and celebrate multi-cultural events/ideas/norms/history
+Thank you for asking! Here are a few ways you could support me:
+
+Clear Communication of Priorities: It would be helpful to have regular check-ins to ensure alignment on priorities, especially as we balance multiple goals. Understanding which objectives are most critical at any given time will allow me to focus my efforts more effectively.
+
+Resource Allocation: If possible, additional resources or tools—such as more advanced monitoring software, access to training on new technologies, or additional team members—could help accelerate progress on some of the more technical goals.
+
+Opportunities for Professional Development: I’d appreciate your support in identifying opportunities for professional growth, such as attending relevant conferences, workshops, or training sessions. This would not only enhance my skills but also bring new insights and ideas back to the team.
+
+Encouragement of Innovation: Continuing to encourage innovation by supporting initiatives like our innovation sprints is invaluable. Your endorsement of these efforts can further motivate the team to think creatively and push the boundaries of what we can achieve.
+
+Feedback and Guidance: I value your feedback on my work and would appreciate regular insights into areas where I can improve or where I’m performing well. This helps me stay on track and ensures that I’m meeting your expectations.
+
+Facilitating Collaboration: Helping to foster stronger collaboration between teams—such as engineering, product management, and operations—can create more cohesive and effective project execution. Your support in breaking down any barriers between teams would be greatly beneficial.
+
+Support for Work-Life Balance: Finally, your understanding and support for maintaining a healthy work-life balance would help me stay energized and productive. Flexibility when needed can make a big difference in managing both personal and professional responsibilities.
