@@ -178,7 +178,7 @@ Datadog monitors the error handling process and alerts the team if the maximum n
 
 ### Diagram
 The following diagram provides a high-level overview of the logical architecture, illustrating the flow of data and control between the various components of the system.
-
+```plaintext
 +---------------------------------+           +-----------------------------------+
 |                                 |           |                                   |
 |       PCI/CSI Calculations      |           |       Configuration via           |
@@ -226,7 +226,7 @@ The following diagram provides a high-level overview of the logical architecture
 |   - Alerts team in case of      |           |   - Sends alerts for any issues   |
 |     any issues                  |           |     or threshold breaches         |
 +---------------------------------+           +-----------------------------------+
-
+```
 ## 8. Physical Architecture Diagram
 
 ### Diagram
