@@ -179,42 +179,53 @@ Datadog monitors the error handling process and alerts the team if the maximum n
 ### Diagram
 The following diagram provides a high-level overview of the logical architecture, illustrating the flow of data and control between the various components of the system.
 
-```plaintext
-+-----------------------+        +-----------------------+
-|                       |        |                       |
-|   PCI/CSI Library     |        |   Configurations via  |
-|                       |<-------|   ConfigMaps          |
-+-----------------------+        +-----------------------+
-           |                              |
-           v                              |
-+-----------------------+                 |
-|                       |                 |
-|  Kubernetes CronJobs  |                 |
-|                       |                 |
-+-----------------------+                 |
-           |                              |
-           v                              v
-+-----------------------+        +-----------------------+
-|                       |        |                       |
-|  EFS (Benchmarking    |        |   Snowflake Table      |
-|  Data Management)     +------->|   (Results Storage)    |
-|                       |<-------|                       |
-+-----------------------+        +-----------------------+
-           |                              |
-           v                              |
-+-----------------------+                 |
-|                       |                 |
-|  Error Handling and   |                 |
-|  Retry Mechanism      |                 |
-+-----------------------+                 |
-           |                              |
-           v                              v
-+-----------------------+        +-----------------------+
-|                       |        |                       |
-|  Monitoring & Alerts  |<-------|    Datadog            |
-|                       |        |                       |
-+-----------------------+        +-----------------------+
-```
++---------------------------------+           +-----------------------------------+
+|                                 |           |                                   |
+|       PCI/CSI Calculations      |           |       Configuration via           |
+|           Library               |           |          OpenShift ConfigMaps     |
+|   - Python-based library        |<----------|   - Centralized configuration     |
+|   - Uses Poetry for dependency  |           |     management                    |
+|     management                  |           |   - Manages model-specific        |
+|   - Includes post-processing    |           |     settings                      |
+|     steps to send data to       |           |                                   |
+|     Snowflake                   |           |                                   |
++---------------------------------+           +-----------------------------------+
+           |                                              |
+           v                                              v
++---------------------------------+           +-----------------------------------+
+|                                 |           |                                   |
+|       Kubernetes CronJobs       |           |     Benchmarking Data in EFS      |
+|   - Schedules model-specific    |           |   - Stores one month of data for  |
+|     jobs                        |           |     each model                    |
+|   - Runs on OpenShift platform  |           |   - Data is manually updated      |
+|   - Supports model execution    |<----------|     monthly using OpenShift       |
+|     at different times          |           |     containers                    |
+|   - Pulls benchmarking data     |           |   - Accessed by the PCI/CSI       |
+|     from EFS                    |           |     Calculations Library for      |
+|                                 |           |     comparison                    |
++---------------------------------+           +-----------------------------------+
+           |                                              
+           v                                              
++---------------------------------+           +-----------------------------------+
+|                                 |           |                                   |
+|         Error Handling &        |           |         Snowflake Table           |
+|         Retry Mechanism         |           |   - Stores results of PCI/CSI     |
+|   - Automatic retry for failed  |---------->|     calculations                  |
+|     jobs                        |           |   - Integrated with post-         |
+|   - Monitors execution process  |           |     processing step in the        |
+|   - Sends alerts via Datadog    |           |     library                       |
+|     in case of errors           |           |                                   |
++---------------------------------+           |                                   |
+           |                                  |                                   |
+           v                                  |                                   |
++---------------------------------+           +-----------------------------------+
+|                                 |           |                                   |
+|        Monitoring & Alerts      |           |          Datadog Monitoring       |
+|   - Monitors infrastructure     |           |   - Monitors infrastructure and   |
+|     and application health      |---------->|     application performance       |
+|   - Alerts team in case of      |           |   - Sends alerts for any issues   |
+|     any issues                  |           |     or threshold breaches         |
++---------------------------------+           +-----------------------------------+
 
 ## 8. Physical Architecture Diagram
 
