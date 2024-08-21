@@ -236,28 +236,58 @@ The physical architecture diagram provides a detailed view of the infrastructure
 +-------------------------------------------------------------+
 |                          OpenShift Cluster                  |
 |                                                             |
-|  +-----------------------+      +-----------------------+  |
-|  |                       |      |                       |  |
-|  |   Kubernetes Pod 1    |      |   Kubernetes Pod 2    |  |
-|  |  (PCI/CSI Calc + Post |      |  (Benchmarking Data   |  |
-|  |   Processing)         |      |   Management)         |  |
-|  +-----------------------+      +-----------------------+  |
-|        |                           |                         |
-|        v                           v                         |
-|  +-----------------------+      +-----------------------+  |
-|  |    EFS Storage         |<----|   Snowflake Database   |  |
-|  +-----------------------+      +-----------------------+  |
+|  +-----------------------+      +-----------------------+   |
+|  |                       |      |                       |   |
+|  |   Kubernetes Pod 1    |      |   Kubernetes Pod 2    |   |
+|  |  (PCI/CSI Calc + Post |      |  (Pull Benchmarking   |   |
+|  |   Processing)         |      |   Data)               |   |
+|  |                       |      |                       |   |
+|  |  - Mounted with EFS   |      |  - Mounted with EFS   |   |
+|  |    and ConfigMaps     |      |    and ConfigMaps     |   |
+|  |  - Runs PCI/CSI code  |      |  - Runs Pull          |   |
+|  |    as a CronJob       |      |    Benchmarking code  |   |
+|  |  - Stores results in  |      |    as a CronJob       |   |
+|  |    Snowflake DB       |      |  - Updates EFS with   |   |
+|  |                       |      |    new data           |   |
+|  +-----------------------+      +-----------------------+   |
+|                                                             |
+|                          |                                  |
+|                          v                                  |
+|  +-----------------------+                                  |
+|  |    EFS Storage         |<--------------------------------|
+|  |  (Stores benchmarking  |                                 |
+|  |   data for models)     |                                 |
+|  +-----------------------+                                  |
+|                                                             |
 +-------------------------------------------------------------+
 
 +-------------------------------------------------------------+
-|                        Jenkins Server                        |
+|                        Jenkins Server                       |
 |                                                             |
-|  +-----------------------+      +-----------------------+  |
+|  +-----------------------+      +-----------------------+   |
 |  |   ConfigMap Updates    |      |  Scheduled Jobs       |  |
 |  |    (Jenkins)           |      |   (Jenkins)           |  |
-|  +-----------------------+      +-----------------------+  |
+|  +-----------------------+      +-----------------------+   |
 |                                                             |
 +-------------------------------------------------------------+
+
++-------------------------------------------------------------+
+|                       Snowflake Database                    |
+|                                                             |
+|  +--------------------------------------------------------+ |
+|  |    - Stores results of PCI/CSI calculations            | |
+|  +--------------------------------------------------------+ |
++-------------------------------------------------------------+
+
++-------------------------------------------------------------+
+|                       Datadog Monitoring                    |
+|                                                             |
+|  +--------------------------------------------------------+ |
+|  |    - Monitors infrastructure and application health     ||
+|  |    - Sends alerts for issues or threshold breaches      ||
+|  +--------------------------------------------------------+ |
++-------------------------------------------------------------+
+
 ```
 
 ## 9. Infrastructure Requirements, Design, and Sizing
